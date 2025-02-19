@@ -4,5 +4,6 @@
 /obj/
 /Temp/
 /.idea/
+/.build/
 UpgradeLog.htm
 .vsconfig
