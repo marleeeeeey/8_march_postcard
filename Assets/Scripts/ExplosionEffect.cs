@@ -9,23 +9,22 @@ public class StarExplosion : MonoBehaviour
     private Vector3 initialScale;
     private SpriteRenderer spriteRenderer;
     private float targetScaleMultiplier;
-    
     private AudioSource audioSource;
 
     void Awake()
     {
-        // Сохраняем исходный масштаб
+        // Save initial scale
         initialScale = transform.localScale;
 
-        // Добавляем случайный поворот
+        // Add random rotation
         float randomAngle = Random.Range(0f, 360f);
         transform.rotation = Quaternion.Euler(0f, 0f, randomAngle);
 
-        // Определяем случайный множитель масштабирования
+        // Random scale multiplier
         targetScaleMultiplier = Random.Range(scaleMultiplierRange.x, scaleMultiplierRange.y);
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
     }
@@ -35,18 +34,18 @@ public class StarExplosion : MonoBehaviour
         timer += Time.deltaTime;
         float t = timer / duration;
 
-        // Интерполяция масштаба с учетом случайного множителя
+        // Interpolate scale
         transform.localScale = Vector3.Lerp(initialScale, initialScale * targetScaleMultiplier, t);
 
-        // Постепенное исчезновение (если есть спрайт)
-        if (spriteRenderer != null)
+        // Fade out
+        if (spriteRenderer)
         {
             Color color = spriteRenderer.color;
             color.a = Mathf.Lerp(1f, 0f, t);
             spriteRenderer.color = color;
         }
 
-        // Уничтожение объекта по окончании анимации
+        // Destroy
         if (timer >= duration)
         {
             Destroy(gameObject);

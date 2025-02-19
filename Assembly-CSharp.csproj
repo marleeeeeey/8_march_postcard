@@ -47,11 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Aim.cs" />
-    <Compile Include="Assets\ExplosionEffect.cs" />
-    <Compile Include="Assets\Score.cs" />
+    <Compile Include="Assets\Scripts\Score.cs" />
+    <Compile Include="Assets\Scripts\FPSDisplay.cs" />
+    <Compile Include="Assets\Scripts\FPSLimiter.cs" />
+    <Compile Include="Assets\Scripts\ExplosionEffect.cs" />
     <Compile Include="Assets\Scripts\FallingObjectsSpawner.cs" />
-    <Compile Include="Assets\BackgroundMusic.cs" />
-    <Compile Include="Assets\WinMessage.cs" />
+    <Compile Include="Assets\Scripts\Music.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.38f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
