@@ -9,6 +9,8 @@ public class Aim : MonoBehaviour
     private Vector3 targetPosition;
     private AudioSource shootSound;
     public GameObject explosionPrefab;
+    public Score scoreObject;
+    private int score = 0;
 
     void Start()
     {
@@ -40,6 +42,8 @@ public class Aim : MonoBehaviour
         {
             Destroy(hit.gameObject);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            score++;
+            scoreObject.SetScore(score);
         }
         else
         {

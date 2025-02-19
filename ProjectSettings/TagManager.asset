@@ -51,5 +51,8 @@ TagManager:
   - name: Crosshair
     uniqueID: 1730189603
     locked: 0
+  - name: Score
+    uniqueID: 872630739
+    locked: 0
   m_RenderingLayers:
   - Default
